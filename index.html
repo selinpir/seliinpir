@@ -1,32 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>selinpir</title>
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#008080">
+  <meta name="description" content="Selin Pir — SAP/ERP, yazılım ve veri portföyü. Windows 98 tarzında kişisel masaüstü.">
+  <title>Selin Pir Portfolio</title>
+  <link rel="icon" href="assets/icons/computer.png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="content.js"></script>
+  <script defer src="script.js"></script>
 </head>
-<body class="light-page" >
-    <div id="entry-page">
-
-       <div class="gif-background-layer">
-            <a href="hakkimda.html" class="gif-link">
-                <img src="img/gif/left.gif" alt="Arka Plan GIF" class="background-gif">
-            </a>
-            <a href="hakkimda.html" class="gif-link">
-                <img src="img/gif/left.gif" alt="Arka Plan GIF" class="background-gif">
-            </a>
-            <a href="hakkimda.html" class="gif-link">
-                <img src="img/gif/left.gif" alt="Arka Plan GIF" class="background-gif">
-            </a>
-        </div>
-      
-        <div class="center-image-layer">
-            <a href="hakkimda.html">
-                <img src="img/bne22.png" alt="Portfolyo Giriş" class="center-image">
-            </a>
-        </div>
-    </div>
+<body>
+  <main id="desktop" aria-label="Selin Portfolio masaüstü">
+    <button class="desktop-shortcut" data-restore="main" type="button"><img src="assets/icons/computer.png" alt=""><span>Selin.exe</span></button>
+    <section id="main-window" class="window main-window" aria-labelledby="main-title">
+      <header class="title-bar">
+        <div class="title-caption"><img src="assets/icons/computer.png" alt=""><span id="main-title">Selin Pir Portfolio</span></div>
+        <div class="window-controls"><button class="win-button" data-main="minimize" aria-label="Küçült">_</button><button class="win-button" data-main="maximize" aria-label="Büyüt veya eski boyuta getir">□</button><button class="win-button close-control" data-main="close" aria-label="Ana pencereyi kapat">×</button></div>
+      </header>
+      <nav class="menu-bar" aria-label="Uygulama menüsü">
+        <button data-menu="file" aria-expanded="false"><u>F</u>ile</button><button data-menu="edit" aria-expanded="false"><u>E</u>dit</button><button data-menu="view" aria-expanded="false"><u>V</u>iew</button><button data-menu="navigate" aria-expanded="false"><u>N</u>avigate</button><button data-menu="help" aria-expanded="false"><u>H</u>elp</button>
+      </nav>
+      <div id="menu-popup" class="menu-popup outset-panel" hidden></div>
+      <div class="window-body main-body">
+        <fieldset class="assistant-field"><legend>Portfolio Assistant</legend>
+          <div class="assistant-stage inset-panel"><img src="assets/pixel/selin.svg" alt="Selin'in piksel karakteri" class="pixel-selin"><span class="assistant-name">Selin</span></div>
+          <div class="assistant-speech">Merhaba, ben Selin.<br>Hangi dosyayı açmak istersin?</div>
+          <p class="assistant-summary">Yönetim Bilişim Sistemleri<br>SAP / ERP · Software · Data</p>
+          <label class="classic-check"><input id="assistant-toggle" type="checkbox" checked> Show assistant</label>
+        </fieldset>
+        <section class="browser-field" aria-label="Portföy dosyaları">
+          <div class="browser-label">Portfolio files</div>
+          <div class="address-row"><label for="address">Address</label><input id="address" class="inset-panel" readonly value="C:\Selin\Portfolio"></div>
+          <div class="scroll-frame inset-panel" id="files-frame">
+            <div class="scroll-viewport" id="files-viewport" tabindex="0" aria-label="Portföy dosyaları, kaydırılabilir"><div id="file-grid" class="file-grid"></div></div>
+          </div>
+          <div class="browser-footer"><span id="file-count"> 16 object(s)</span><span>Click to open</span></div>
+        </section>
+      </div>
+      <div class="main-actions"><button class="win-button" data-open="about">About Me</button><button class="win-button" data-open="resume">View CV</button><button class="win-button" data-main="close">Close</button></div>
+      <footer class="status-bar"><span id="main-status">Ready</span><span>Selin.exe</span><span class="size-grip" aria-hidden="true">◢</span></footer>
+    </section>
+    <div id="window-container"></div>
+  </main>
+  <div id="start-menu" class="start-menu outset-panel" hidden><div class="start-banner">Selin<span>02</span></div><div><button data-restore="main"><img src="assets/icons/computer.png" alt="">Portfolio Assistant</button><button data-open="projects"><img src="assets/icons/folder.png" alt="">Projects</button><button data-open="contact"><img src="assets/icons/phone.png" alt="">Contact</button><hr><button data-open="help"><img src="assets/icons/help.png" alt="">Help</button></div></div>
+  <footer class="taskbar"><button id="start-button" class="win-button start-button" aria-expanded="false"><img src="assets/icons/control.png" alt="">Start</button><div class="task-separator"></div><div id="task-buttons"><button class="win-button task-button" data-restore="main"><img src="assets/icons/computer.png" alt="">Selin Portfolio</button></div><div class="tray inset-panel"><time id="clock"></time></div></footer>
+  <noscript><p class="noscript">Dosyaları açmak için JavaScript'i etkinleştirin. <a href="https://github.com/selinpir">GitHub profilini aç</a>.</p></noscript>
 </body>
 </html>
